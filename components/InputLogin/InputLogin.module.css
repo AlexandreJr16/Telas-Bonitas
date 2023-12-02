@@ -1,0 +1,24 @@
+.input_u_container {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 3px solid #878787;
+  padding: 0.8rem;
+  border-radius: 15px;
+  margin-bottom: 1.4em;
+}
+.img_input {
+  background-color: #1f1f1f;
+}
+.input_box {
+  width: 100%;
+  margin-left: 20px;
+  background-color: #1f1f1f;
+  font-size: 1rem;
+  border: none;
+  padding: 0.6rem;
+  outline: none;
+  color: #878787;
+}

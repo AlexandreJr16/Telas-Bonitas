@@ -1,95 +1,64 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import styles from "./page.module.css";
+import logoImg from "../public/logo.svg";
+import InputLogin from "@/components/InputLogin/InputLogin";
+import userImg from "../public/user 1.svg";
+import { useForm, SubmitHandler } from "react-hook-form";
+import lockImg from "../public/lock 1.svg";
+import Link from "next/link";
 
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<any>();
+  const onSubmit: SubmitHandler<any> = (data) => {
+    console.log(data);
+    //Se tivesse o backend seria aqui que faria o post pra login
+  };
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+      <div className={styles.side_carrousel}></div>
+      <div className={styles.side_input}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          width={29}
+          height={32}
+          src={logoImg}
+          alt={""}
+          className={styles.imgLogo}
         />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className={styles.text_container}>
+          <h1 className={styles.title}>Bem-vindo!</h1>
+          <h2 className={styles.subtitle}>Acesse a sua conta:</h2>
+        </div>
+        <form
+          className={styles.input_container}
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <InputLogin
+            register={register}
+            imgSource={userImg}
+            placeholder={"example@gmail.com"}
+            forText={"email"}
+          ></InputLogin>
+          <InputLogin
+            register={register}
+            imgSource={lockImg}
+            placeholder={"senha123"}
+            forText={"senha"}
+          ></InputLogin>
+          <p className={styles.forgetString}>
+            Esqueceu a senha?
+            <strong className={styles.forgetStringBlue}> Clique aqui.</strong>
           </p>
-        </a>
+          <Link href={"/home"} className={styles.width100}>
+            <input type="submit" value={"Entrar"} className={styles.button} />
+          </Link>
+        </form>
       </div>
     </main>
-  )
+  );
 }
