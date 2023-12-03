@@ -1,7 +1,10 @@
+import NavBar from "@/components/NavBar/NavBar";
+import styles from "./page.module.css";
+
 const page = () => {
   return (
-    <div>
-      <p>Ola</p>
+    <div className={styles.page}>
+      <NavBar />
     </div>
   );
 };
