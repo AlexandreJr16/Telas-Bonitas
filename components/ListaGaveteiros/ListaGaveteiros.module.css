@@ -1,0 +1,30 @@
+.lista {
+  width: 90%;
+  flex-wrap: wrap;
+}
+.img {
+  width: 12%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.img:hover {
+  transform: scale(1.05);
+}
+.text_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem;
+}
+.text_principal {
+  color: white;
+  font-size: 13pt;
+}
+.text_mais {
+  text-decoration: underline;
+  color: #36a5bf;
+  margin-right: 4rem;
+  font-size: 12pt;
+  cursor: pointer;
+}
