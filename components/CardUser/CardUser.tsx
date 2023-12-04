@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import styles from "./CardUser.module.css";
-import user from "../../public/navbar/fotoPerfilCliente.svg";
-import Link from "next/link";
+import user from "../../public/perfilClienteEditar.svg";
 import { useState } from "react";
+import Link from "next/link";
 const CardUser = () => {
   const [select, setSelect] = useState<number | null>(null);
   return (
@@ -17,41 +17,41 @@ const CardUser = () => {
         </div>
       </div>
       <div className={styles.bottom_card}>
-        <input
-          type="button"
+        <Link
+          href={""}
           className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
-          value={"Detalhes da conta"}
-        ></input>
-        <input
-          type="button"
-          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
-          value={"Alterar Senha"}
-        ></input>
-        <input
-          type="button"
-          value={"Meus favoritos"}
-          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
-        />
-        <Link href={"/"}>
-          <input
-            type="button"
-            value={"Meus projetos"}
-            className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
-          />
+        >
+          <p className={styles.selected_text_btn}> Detalhes da conta</p>
         </Link>
-        <Link href={"/"}>
-          <input
-            type="button"
-            value={"Sair da conta"}
-            className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
-          />
+        <Link
+          href={""}
+          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
+        >
+          <p className={styles.selected_text_btn}> Alterar senha</p>
         </Link>
-        <Link href={"/"}>
-          <input
-            type="button"
-            value={"Delete sua conta"}
-            className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
-          />
+        <Link
+          href={""}
+          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
+        >
+          <p className={styles.selected_text_btn}> Meus favoritos</p>
+        </Link>
+        <Link
+          href={""}
+          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
+        >
+          <p className={styles.selected_text_btn}>Meus Projetos</p>
+        </Link>
+        <Link
+          href={"/"}
+          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
+        >
+          <p className={styles.selected_text_btn}> Sair da conta</p>
+        </Link>
+        <Link
+          href={"/"}
+          className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
+        >
+          <p className={styles.selected_text_btn}> Delete sua conta</p>
         </Link>
       </div>
     </div>
