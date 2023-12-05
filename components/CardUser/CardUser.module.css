@@ -56,10 +56,19 @@
 }
 .selected_text_btn {
   padding: 0.4rem 0.8rem;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 .selected_text_btn:hover {
   background-color: #36a5bf;
+  border-radius: 30px;
+  color: #fff;
+}
+.selected_text_btn_delete {
+  padding: 0.4rem 0.8rem;
+  transition: 0.1s;
+}
+.selected_text_btn_delete:hover {
+  background-color: #a64029;
   border-radius: 30px;
   color: #fff;
 }

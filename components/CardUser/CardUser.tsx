@@ -51,7 +51,7 @@ const CardUser = () => {
           href={"/"}
           className={select == 0 ? styles.nav_btn_selected : styles.nav_btn}
         >
-          <p className={styles.selected_text_btn}> Delete sua conta</p>
+          <p className={styles.selected_text_btn_delete}> Delete sua conta</p>
         </Link>
       </div>
     </div>

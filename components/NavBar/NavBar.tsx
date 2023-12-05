@@ -7,6 +7,7 @@ import logo from "../../public/navbar/logo (1).svg";
 import perfil from "../../public/navbar/fotoPerfilCliente.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const NavBar = ({ selected }: { selected: any }) => {
   const imageSources = [logo, home, message, search, user];
